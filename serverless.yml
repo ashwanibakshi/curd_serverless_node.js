@@ -1,0 +1,16 @@
+service: demo
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi: '*'
+      
+# adding these two lines
+plugins:
+  - serverless-offline
